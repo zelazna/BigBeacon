@@ -14,6 +14,9 @@
 		C2D2C72A2091FC3300608899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2C7282091FC3300608899 /* LaunchScreen.storyboard */; };
 		C2D2C7352091FC3300608899 /* big_beaconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C7342091FC3300608899 /* big_beaconTests.swift */; };
 		C2D2C7402091FC3300608899 /* big_beaconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C73F2091FC3300608899 /* big_beaconUITests.swift */; };
+		C2D2C750209204AB00608899 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C74F209204AB00608899 /* Constants.swift */; };
+		C2D2C75220920DDF00608899 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C75120920DDF00608899 /* Helper.swift */; };
+		C2D2C756209222A300608899 /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C755209222A300608899 /* QRCodeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		C2D2C73B2091FC3300608899 /* big_beaconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = big_beaconUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2C73F2091FC3300608899 /* big_beaconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = big_beaconUITests.swift; sourceTree = "<group>"; };
 		C2D2C7412091FC3300608899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D2C74F209204AB00608899 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C2D2C75120920DDF00608899 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		C2D2C755209222A300608899 /* QRCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				C2D2C7262091FC3300608899 /* Assets.xcassets */,
 				C2D2C7282091FC3300608899 /* LaunchScreen.storyboard */,
 				C2D2C72B2091FC3300608899 /* Info.plist */,
+				C2D2C74F209204AB00608899 /* Constants.swift */,
+				C2D2C75120920DDF00608899 /* Helper.swift */,
+				C2D2C755209222A300608899 /* QRCodeController.swift */,
 			);
 			path = big_beacon;
 			sourceTree = "<group>";
@@ -258,6 +267,9 @@
 			files = (
 				C2D2C7222091FC3200608899 /* ViewController.swift in Sources */,
 				C2D2C7202091FC3200608899 /* AppDelegate.swift in Sources */,
+				C2D2C750209204AB00608899 /* Constants.swift in Sources */,
+				C2D2C75220920DDF00608899 /* Helper.swift in Sources */,
+				C2D2C756209222A300608899 /* QRCodeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
