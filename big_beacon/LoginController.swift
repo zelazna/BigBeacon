@@ -16,6 +16,25 @@ class LoginController: UIViewController {
     @IBOutlet weak var errorMsg: UIView!
     @IBOutlet weak var errorMsgLabel: UILabel!
     @IBOutlet weak var buttonGo: UIMainButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    func displayModal(){
+        UIView.animate(withDuration: 1, delay: 0.2, options: .curveEaseOut, animations: {
+            self.connexionView.alpha = 1
+            self.titleLabel.alpha = 1
+            self.userId.alpha = 1
+            self.userPassword.alpha = 1
+            self.buttonGo.alpha = 1
+            self.connexionView.layer.cornerRadius = 5
+            self.connexionView.layer.shadowColor = UIColor.black.cgColor
+            self.connexionView.layer.shadowOpacity = 0.3
+            self.connexionView.layer.shadowOffset = CGSize.zero
+            self.connexionView.layer.shadowRadius = 10
+            self.buttonGo.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            self.buttonGo.layer.cornerRadius = 15
+            self.buttonGo.layer.backgroundColor = UIColor(red: 1, green: 0.92941, blue: 0, alpha: 1).cgColor
+        })
+    }
     
     func removeErrorMsg(){
         DispatchQueue.main.async {
@@ -27,14 +46,33 @@ class LoginController: UIViewController {
     
     func displayErrorMsg(){
         DispatchQueue.main.async {
-            self.errorMsg.layer.cornerRadius = 5
-            self.errorMsg.layer.backgroundColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 0.3).cgColor
-            self.errorMsgLabel.textColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 1)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.errorMsg.layer.cornerRadius = 5
+                self.errorMsg.layer.backgroundColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 0.3).cgColor
+            })
+            UIView.animate(withDuration: 1, delay: 0.9, animations: {
+              self.errorMsgLabel.textColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 1)
+            })
+        }
+    }
+    
+    func buttonAnimation(){
+        let bounds = buttonGo.bounds
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
+            self.buttonGo.bounds = CGRect(x: bounds.origin.x-10, y: bounds.origin.y, width: bounds.size.width+20, height: bounds.size.height)
+        }) { (success: Bool) in
+            if success {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.buttonGo.bounds = bounds
+                })
+                self.buttonGo.bounds = bounds
+            }
         }
     }
     
     
     @IBAction func connect(_ sender: Any) {
+        self.buttonAnimation()
         let id = userId.text
         let password = userPassword.text
         if userId.text == nil {
@@ -87,15 +125,12 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.removeErrorMsg()
-        
-        connexionView.layer.cornerRadius = 5
-        connexionView.layer.shadowColor = UIColor.black.cgColor
-        connexionView.layer.shadowOpacity = 0.3
-        connexionView.layer.shadowOffset = CGSize.zero
-        connexionView.layer.shadowRadius = 10
-        buttonGo.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-        buttonGo.layer.cornerRadius = 15
-        buttonGo.layer.backgroundColor = UIColor(red: 1, green: 0.92941, blue: 0, alpha: 1).cgColor
+        connexionView.alpha = 0
+        titleLabel.alpha = 0
+        userId.alpha = 0
+        userPassword.alpha = 0
+        buttonGo.alpha = 0
+        self.displayModal()
         // Do any additional setup after loading the view.
     }
 
