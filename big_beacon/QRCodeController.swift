@@ -56,7 +56,7 @@ class QRCodeController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                 messageLabel.text = metadataObj.stringValue
                 let appDelegate = UIApplication.shared.delegate as? AppDelegate
                 appDelegate?.qrCode = metadataObj.stringValue
-                if let next = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController {
+                if let next = self.storyboard?.instantiateViewController(withIdentifier: "CheckIn") as? ViewController {
                     self.navigationController?.pushViewController(next, animated: true)
                 }
             }

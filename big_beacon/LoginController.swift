@@ -12,13 +12,37 @@ class LoginController: UIViewController {
 
     @IBOutlet weak var userId: UITextField!
     @IBOutlet weak var userPassword: UITextField!
+    @IBOutlet weak var errorMsg: UIView!
+    @IBOutlet weak var errorMsgLabel: UILabel!
+    
+    func removeErrorMsg(){
+        DispatchQueue.main.async {
+            self.errorMsg.layer.cornerRadius = 5
+            self.errorMsg.layer.backgroundColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 0).cgColor
+            self.errorMsgLabel.textColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 0)
+        }
+    }
+    
+    func displayErrorMsg(){
+        DispatchQueue.main.async {
+            self.errorMsg.layer.cornerRadius = 5
+            self.errorMsg.layer.backgroundColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 0.3).cgColor
+            self.errorMsgLabel.textColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 1)
+        }
+    }
     
     
     @IBAction func connect(_ sender: Any) {
         let id = userId.text
         let password = userPassword.text
-        if userId.text == nil { print("no ID") }
-        else if userPassword == nil { print("no password") }
+        if userId.text == nil {
+            print("no ID")
+            self.displayErrorMsg()
+        }
+        else if userPassword == nil {
+            print("no password")
+            self.displayErrorMsg()
+        }
         else {
             let session = URLSession.shared
             let u = URL(string:"http://localhost:3000/api/login")
@@ -30,12 +54,14 @@ class LoginController: UIViewController {
             let task = session.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
                     print("error=\(String(describing: error))")
+                    self.displayErrorMsg()
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     print("response = \(String(describing: response))")
+                    self.displayErrorMsg()
                 }
                 
                 do {
@@ -58,6 +84,7 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.removeErrorMsg()
 
         // Do any additional setup after loading the view.
     }
