@@ -12,4 +12,8 @@ class Helper{
     static func storeToken(_ token : String) {
         UserDefaults.standard.set(token, forKey: "token")
     }
+    
+    static func getToken()-> String?{
+        return UserDefaults.standard.string(forKey: "token")
+    }
 }

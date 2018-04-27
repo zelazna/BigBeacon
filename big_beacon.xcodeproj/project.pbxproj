@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		565EECEF209304E20001F445 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565EECEE209304E20001F445 /* LoginController.swift */; };
+		C2268732209359ED00E2210B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2268731209359ED00E2210B /* MapKit.framework */; };
 		C2D2C7202091FC3200608899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C71F2091FC3200608899 /* AppDelegate.swift */; };
 		C2D2C7222091FC3200608899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C7212091FC3200608899 /* ViewController.swift */; };
 		C2D2C7252091FC3200608899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2C7232091FC3200608899 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		565EECEE209304E20001F445 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C2268731209359ED00E2210B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C2D2C71C2091FC3200608899 /* big_beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = big_beacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2C71F2091FC3200608899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D2C7212091FC3200608899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2268732209359ED00E2210B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2268730209359ED00E2210B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2268731209359ED00E2210B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2D2C7132091FC3200608899 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +100,7 @@
 				C2D2C7332091FC3300608899 /* big_beaconTests */,
 				C2D2C73E2091FC3300608899 /* big_beaconUITests */,
 				C2D2C71D2091FC3200608899 /* Products */,
+				C2268730209359ED00E2210B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +217,14 @@
 				TargetAttributes = {
 					C2D2C71B2091FC3200608899 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C2D2C72F2091FC3300608899 = {
 						CreatedOnToolsVersion = 9.3;
