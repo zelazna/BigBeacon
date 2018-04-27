@@ -10,12 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBAction func showScanner(_ sender: Any) {
+    var qrCode: String? = nil
+    
+    @IBAction func checkIn(_ sender: Any) {
         
+    }
+    
+    @IBAction func showScanner(_ sender: Any) {
+        if let next = self.storyboard?.instantiateViewController(withIdentifier: "QrCodeController") as? QRCodeController {
+            self.navigationController?.pushViewController(next, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         checkToken()
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        if let qrCode = appDelegate?.qrCode {
+            self.qrCode = qrCode
+            let url = URL(string: "\(Constants.backEndUrl)/api/checkIn")!
+        }
     }
     
     override func viewDidLoad() {
@@ -71,9 +84,8 @@ class ViewController: UIViewController {
     
     func redirectToLogin(){
         if let next = self.storyboard?.instantiateViewController(withIdentifier: "LoginController") as? LoginController {
-            self.navigationController?.pushViewController(next, animated: true)
+            //self.navigationController?.pushViewController(next, animated: true)
         }
-        
     }
 
 }
