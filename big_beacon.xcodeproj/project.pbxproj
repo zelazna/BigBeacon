@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		565EECEF209304E20001F445 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565EECEE209304E20001F445 /* LoginController.swift */; };
 		C2D2C7202091FC3200608899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C71F2091FC3200608899 /* AppDelegate.swift */; };
 		C2D2C7222091FC3200608899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C7212091FC3200608899 /* ViewController.swift */; };
 		C2D2C7252091FC3200608899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2C7232091FC3200608899 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		565EECEE209304E20001F445 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C2D2C71C2091FC3200608899 /* big_beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = big_beacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2C71F2091FC3200608899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D2C7212091FC3200608899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				C2D2C74F209204AB00608899 /* Constants.swift */,
 				C2D2C75120920DDF00608899 /* Helper.swift */,
 				C2D2C755209222A300608899 /* QRCodeController.swift */,
+				565EECEE209304E20001F445 /* LoginController.swift */,
 			);
 			path = big_beacon;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2D2C7222091FC3200608899 /* ViewController.swift in Sources */,
+				565EECEF209304E20001F445 /* LoginController.swift in Sources */,
 				C2D2C7202091FC3200608899 /* AppDelegate.swift in Sources */,
 				C2D2C750209204AB00608899 /* Constants.swift in Sources */,
 				C2D2C75220920DDF00608899 /* Helper.swift in Sources */,

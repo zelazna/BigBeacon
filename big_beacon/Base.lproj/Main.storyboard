@@ -94,5 +94,61 @@
             </objects>
             <point key="canvasLocation" x="897" y="134"/>
         </scene>
+        <!--Login Controller-->
+        <scene sceneID="Y72-ZP-BlM">
+            <objects>
+                <viewController storyboardIdentifier="LoginController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lHd-Wv-tMo" customClass="LoginController" customModule="big_beacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1lV-NH-CyU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Connexion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3V-08-mKL">
+                                <rect key="frame" x="147" y="151" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-0e-NTJ">
+                                <rect key="frame" x="88" y="314" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="S8W-aS-lX1"/>
+                                    <constraint firstAttribute="width" constant="200" id="oSa-QL-UCf"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSw-hF-bUm">
+                                <rect key="frame" x="172" y="380" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXA-yS-XG9">
+                                <rect key="frame" x="88" y="258" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="93b-y4-8Ia"/>
+                                    <constraint firstAttribute="height" constant="40" id="E2G-Tv-ZA5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZXA-yS-XG9" firstAttribute="centerX" secondItem="W3V-08-mKL" secondAttribute="centerX" id="3Ta-4r-amW"/>
+                            <constraint firstItem="ZXA-yS-XG9" firstAttribute="centerX" secondItem="1lV-NH-CyU" secondAttribute="centerX" id="76C-lb-Snx"/>
+                            <constraint firstItem="ZXA-yS-XG9" firstAttribute="top" secondItem="W3V-08-mKL" secondAttribute="bottom" constant="96" id="8as-Dr-1Tx"/>
+                            <constraint firstItem="NKv-0e-NTJ" firstAttribute="top" secondItem="ZXA-yS-XG9" secondAttribute="bottom" constant="16" id="TiG-Pb-4ow"/>
+                            <constraint firstItem="NKv-0e-NTJ" firstAttribute="centerY" secondItem="1lV-NH-CyU" secondAttribute="centerY" id="fbc-hC-sYJ"/>
+                            <constraint firstItem="NKv-0e-NTJ" firstAttribute="centerX" secondItem="1lV-NH-CyU" secondAttribute="centerX" id="o3l-tU-WwA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SEs-hG-obp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tht-dK-XcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1640" y="135"/>
+        </scene>
     </scenes>
 </document>
