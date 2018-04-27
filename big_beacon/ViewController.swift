@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     
     func redirectToLogin(){
         if let next = self.storyboard?.instantiateViewController(withIdentifier: "LoginController") as? LoginController {
-            //self.navigationController?.pushViewController(next, animated: true)
+            self.navigationController?.pushViewController(next, animated: true)
         }
     }
 
