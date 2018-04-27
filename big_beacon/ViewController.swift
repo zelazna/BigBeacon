@@ -70,9 +70,10 @@ class ViewController: UIViewController {
     }
     
     func redirectToLogin(){
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "newViewController")
-        self.present(newViewController, animated: true, completion: nil)
+        if let next = self.storyboard?.instantiateViewController(withIdentifier: "LoginController") as? LoginController {
+            self.navigationController?.pushViewController(next, animated: true)
+        }
+        
     }
 
 }
