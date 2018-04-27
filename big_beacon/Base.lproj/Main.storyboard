@@ -119,6 +119,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dizzypatern@x1" translatesAutoresizingMaskIntoConstraints="NO" id="5nj-R4-SsL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lrk-r2-i5S">
+                                <rect key="frame" x="50" y="119" width="220" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connexion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3V-08-mKL">
                                 <rect key="frame" x="119" y="148" width="82" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -196,6 +205,7 @@
                         <viewLayoutGuide key="safeArea" id="SEs-hG-obp"/>
                     </view>
                     <connections>
+                        <outlet property="connexionView" destination="lrk-r2-i5S" id="LbS-MD-WKU"/>
                         <outlet property="errorMsg" destination="JeK-z6-E2t" id="y5H-Tg-I9w"/>
                         <outlet property="errorMsgLabel" destination="zrg-EW-mmm" id="j7y-4b-xHs"/>
                         <outlet property="userId" destination="ZXA-yS-XG9" id="tQy-IG-iY7"/>
@@ -207,4 +217,7 @@
             <point key="canvasLocation" x="1638.75" y="134.1549295774648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dizzypatern@x1" width="375" height="667"/>
+    </resources>
 </document>
