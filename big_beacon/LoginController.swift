@@ -15,7 +15,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var userPassword: UITextField!
     @IBOutlet weak var errorMsg: UIView!
     @IBOutlet weak var errorMsgLabel: UILabel!
-    @IBOutlet weak var buttonGo: UIButton!
+    @IBOutlet weak var buttonGo: UIMainButton!
     
     func removeErrorMsg(){
         DispatchQueue.main.async {
