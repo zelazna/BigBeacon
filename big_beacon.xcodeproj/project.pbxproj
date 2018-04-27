@@ -95,6 +95,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C245187120937321003F3B0C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2D2C7212091FC3200608899 /* ViewController.swift */,
+				C2D2C755209222A300608899 /* QRCodeController.swift */,
+				565EECEE209304E20001F445 /* LoginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C245187320937351003F3B0C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C2D2C74F209204AB00608899 /* Constants.swift */,
+				C2D2C75120920DDF00608899 /* Helper.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C24518742093737C003F3B0C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				561EB80420935D4300F08DD4 /* UIMainButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		C2D2C7132091FC3200608899 = {
 			isa = PBXGroup;
 			children = (
@@ -119,17 +146,14 @@
 		C2D2C71E2091FC3200608899 /* big_beacon */ = {
 			isa = PBXGroup;
 			children = (
+				C245187120937321003F3B0C /* Controllers */,
 				C2D2C71F2091FC3200608899 /* AppDelegate.swift */,
-				C2D2C7212091FC3200608899 /* ViewController.swift */,
 				C2D2C7232091FC3200608899 /* Main.storyboard */,
 				C2D2C7262091FC3300608899 /* Assets.xcassets */,
 				C2D2C7282091FC3300608899 /* LaunchScreen.storyboard */,
 				C2D2C72B2091FC3300608899 /* Info.plist */,
-				C2D2C74F209204AB00608899 /* Constants.swift */,
-				C2D2C75120920DDF00608899 /* Helper.swift */,
-				C2D2C755209222A300608899 /* QRCodeController.swift */,
-				565EECEE209304E20001F445 /* LoginController.swift */,
-				561EB80420935D4300F08DD4 /* UIMainButton.swift */,
+				C245187320937351003F3B0C /* Shared */,
+				C24518742093737C003F3B0C /* UI */,
 			);
 			path = big_beacon;
 			sourceTree = "<group>";
