@@ -18,7 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var scanQrCodeButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
-        checkToken()
+        //checkToken()
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         if let qrCode = appDelegate?.qrCode {
             self.qrCode = qrCode
@@ -95,7 +95,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     private func redirectToLogin(){
         if let next = self.storyboard?.instantiateViewController(withIdentifier: "LoginController") as? LoginController {
-            //self.navigationController?.pushViewController(next, animated: true)
+            self.navigationController?.pushViewController(next, animated: true)
         }
     }
     

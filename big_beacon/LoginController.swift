@@ -10,10 +10,12 @@ import UIKit
 
 class LoginController: UIViewController {
 
+    @IBOutlet weak var connexionView: UIView!
     @IBOutlet weak var userId: UITextField!
     @IBOutlet weak var userPassword: UITextField!
     @IBOutlet weak var errorMsg: UIView!
     @IBOutlet weak var errorMsgLabel: UILabel!
+    @IBOutlet weak var buttonGo: UIMainButton!
     
     func removeErrorMsg(){
         DispatchQueue.main.async {
@@ -85,7 +87,15 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.removeErrorMsg()
-
+        
+        connexionView.layer.cornerRadius = 5
+        connexionView.layer.shadowColor = UIColor.black.cgColor
+        connexionView.layer.shadowOpacity = 0.3
+        connexionView.layer.shadowOffset = CGSize.zero
+        connexionView.layer.shadowRadius = 10
+        buttonGo.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        buttonGo.layer.cornerRadius = 15
+        buttonGo.layer.backgroundColor = UIColor(red: 1, green: 0.92941, blue: 0, alpha: 1).cgColor
         // Do any additional setup after loading the view.
     }
 
