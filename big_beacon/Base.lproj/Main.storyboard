@@ -122,6 +122,9 @@
                                 <rect key="frame" x="172" y="380" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="connect:" destination="lHd-Wv-tMo" eventType="touchUpInside" id="m3Z-tZ-mly"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXA-yS-XG9">
                                 <rect key="frame" x="88" y="258" width="200" height="40"/>
@@ -145,6 +148,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SEs-hG-obp"/>
                     </view>
+                    <connections>
+                        <outlet property="userId" destination="ZXA-yS-XG9" id="tQy-IG-iY7"/>
+                        <outlet property="userPassword" destination="NKv-0e-NTJ" id="Gmz-LH-1rk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tht-dK-XcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
