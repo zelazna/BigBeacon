@@ -111,6 +111,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="KJl-QQ-qPa"/>
+                    <connections>
+                        <outlet property="checkInButton" destination="Cnb-F7-Cst" id="VLJ-96-nJQ"/>
+                        <outlet property="scanButton" destination="Vic-iv-gOH" id="a4d-Ab-cuO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

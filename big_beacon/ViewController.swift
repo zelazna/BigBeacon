@@ -12,13 +12,29 @@ class ViewController: UIViewController {
 
     var qrCode: String? = nil
     
+    @IBOutlet weak var scanButton: UIMainButton!
+    @IBOutlet weak var checkInButton: UIMainButton!
+    
     @IBAction func checkIn(_ sender: Any) {
-        
+        self.buttonAnimation(checkInButton)
     }
     
     @IBAction func showScanner(_ sender: Any) {
+        self.buttonAnimation(scanButton)
         if let next = self.storyboard?.instantiateViewController(withIdentifier: "QrCodeController") as? QRCodeController {
             self.navigationController?.pushViewController(next, animated: true)
+        }
+    }
+    
+    func buttonAnimation(_ el: UIMainButton!){
+        UIView.animate(withDuration: 0.1, animations: {
+            el.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }) { (success: Bool) in
+            if success {
+                UIView.animate(withDuration: 0.1, animations: {
+                    el.transform = CGAffineTransform.identity
+                })
+            }
         }
     }
     
@@ -30,6 +46,8 @@ class ViewController: UIViewController {
             let url = URL(string: "\(Constants.backEndUrl)/api/checkIn")!
         }
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

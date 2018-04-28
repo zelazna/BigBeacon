@@ -19,7 +19,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     func displayModal(){
-        UIView.animate(withDuration: 1, delay: 0.2, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseOut, animations: {
             self.connexionView.alpha = 1
             self.titleLabel.alpha = 1
             self.userId.alpha = 1
@@ -33,7 +33,19 @@ class LoginController: UIViewController {
             self.buttonGo.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             self.buttonGo.layer.cornerRadius = 15
             self.buttonGo.layer.backgroundColor = UIColor(red: 1, green: 0.92941, blue: 0, alpha: 1).cgColor
-        })
+        }) { (success: Bool) in
+            if success {
+                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
+                    self.connexionView.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
+                }) { (success: Bool) in
+                    if success {
+                        UIView.animate(withDuration: 0.1, animations: {
+                            self.connexionView.transform = CGAffineTransform.identity
+                        })
+                    }
+                }
+            }
+        }
     }
     
     func removeErrorMsg(){
@@ -56,20 +68,18 @@ class LoginController: UIViewController {
         }
     }
     
+
     func buttonAnimation(){
-        let bounds = buttonGo.bounds
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
-            self.buttonGo.bounds = CGRect(x: bounds.origin.x-10, y: bounds.origin.y, width: bounds.size.width+20, height: bounds.size.height)
+        UIView.animate(withDuration: 0.1, animations: {
+            self.buttonGo.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         }) { (success: Bool) in
             if success {
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.buttonGo.bounds = bounds
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.buttonGo.transform = CGAffineTransform.identity
                 })
-                self.buttonGo.bounds = bounds
             }
         }
     }
-    
     
     @IBAction func connect(_ sender: Any) {
         self.buttonAnimation()
