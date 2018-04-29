@@ -14,8 +14,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var qrCode: String? = nil
     let manager = CLLocationManager()
 
-    @IBOutlet weak var checkInButton: UIButton!
-    @IBOutlet weak var scanQrCodeButton: UIButton!
+    @IBOutlet weak var scanButton: UIMainButton!
+    @IBOutlet weak var checkInButton: UIMainButton!
+    
+    func buttonAnimation(_ el: UIMainButton!){
+        UIView.animate(withDuration: 0.1, animations: {
+            el.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }) { (success: Bool) in
+            if success {
+                UIView.animate(withDuration: 0.1, animations: {
+                    el.transform = CGAffineTransform.identity
+                })
+            }
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         //checkToken()
@@ -106,7 +118,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if beacons.count > 0 {
-            var beaconsCollection : Array<Int> = beacons.map { Int($0.major) + Int($0.minor) }
+            let beaconsCollection : Array<Int> = beacons.map { Int($0.major) + Int($0.minor) }
             let url = URL(string: "\(Constants.backEndUrl)/api/checkIn")!
             var request = URLRequest(url: url)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")

@@ -112,8 +112,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="KJl-QQ-qPa"/>
                     <connections>
-                        <outlet property="checkInButton" destination="Cnb-F7-Cst" id="k1I-dl-3iV"/>
-                        <outlet property="scanQrCodeButton" destination="uvE-zq-0mT" id="9iO-RQ-nEC"/>
+                        <outlet property="checkInButton" destination="Cnb-F7-Cst" id="VLJ-96-nJQ"/>
+                        <outlet property="scanButton" destination="Vic-iv-gOH" id="a4d-Ab-cuO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -248,6 +248,7 @@
                         <outlet property="connexionView" destination="lrk-r2-i5S" id="LbS-MD-WKU"/>
                         <outlet property="errorMsg" destination="JeK-z6-E2t" id="y5H-Tg-I9w"/>
                         <outlet property="errorMsgLabel" destination="zrg-EW-mmm" id="j7y-4b-xHs"/>
+                        <outlet property="titleLabel" destination="W3V-08-mKL" id="N4h-TA-gOM"/>
                         <outlet property="userId" destination="ZXA-yS-XG9" id="tQy-IG-iY7"/>
                         <outlet property="userPassword" destination="NKv-0e-NTJ" id="Gmz-LH-1rk"/>
                     </connections>

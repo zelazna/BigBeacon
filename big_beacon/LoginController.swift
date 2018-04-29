@@ -16,6 +16,37 @@ class LoginController: UIViewController {
     @IBOutlet weak var errorMsg: UIView!
     @IBOutlet weak var errorMsgLabel: UILabel!
     @IBOutlet weak var buttonGo: UIMainButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    func displayModal(){
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseOut, animations: {
+            self.connexionView.alpha = 1
+            self.titleLabel.alpha = 1
+            self.userId.alpha = 1
+            self.userPassword.alpha = 1
+            self.buttonGo.alpha = 1
+            self.connexionView.layer.cornerRadius = 5
+            self.connexionView.layer.shadowColor = UIColor.black.cgColor
+            self.connexionView.layer.shadowOpacity = 0.3
+            self.connexionView.layer.shadowOffset = CGSize.zero
+            self.connexionView.layer.shadowRadius = 10
+            self.buttonGo.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            self.buttonGo.layer.cornerRadius = 15
+            self.buttonGo.layer.backgroundColor = UIColor(red: 1, green: 0.92941, blue: 0, alpha: 1).cgColor
+        }) { (success: Bool) in
+            if success {
+                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
+                    self.connexionView.transform = CGAffineTransform(scaleX: 1.03, y: 1.03)
+                }) { (success: Bool) in
+                    if success {
+                        UIView.animate(withDuration: 0.1, animations: {
+                            self.connexionView.transform = CGAffineTransform.identity
+                        })
+                    }
+                }
+            }
+        }
+    }
     
     func removeErrorMsg(){
         DispatchQueue.main.async {
@@ -27,14 +58,31 @@ class LoginController: UIViewController {
     
     func displayErrorMsg(){
         DispatchQueue.main.async {
-            self.errorMsg.layer.cornerRadius = 5
-            self.errorMsg.layer.backgroundColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 0.3).cgColor
-            self.errorMsgLabel.textColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 1)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.errorMsg.layer.cornerRadius = 5
+                self.errorMsg.layer.backgroundColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 0.3).cgColor
+            })
+            UIView.animate(withDuration: 1, delay: 0.9, animations: {
+              self.errorMsgLabel.textColor = UIColor(red: 0.84705, green: 0.27843, blue: 0.15294, alpha: 1)
+            })
         }
     }
     
+
+    func buttonAnimation(){
+        UIView.animate(withDuration: 0.1, animations: {
+            self.buttonGo.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }) { (success: Bool) in
+            if success {
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.buttonGo.transform = CGAffineTransform.identity
+                })
+            }
+        }
+    }
     
     @IBAction func connect(_ sender: Any) {
+        self.buttonAnimation()
         let id = userId.text
         let password = userPassword.text
         if userId.text == nil {
@@ -87,15 +135,12 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.removeErrorMsg()
-        
-        connexionView.layer.cornerRadius = 5
-        connexionView.layer.shadowColor = UIColor.black.cgColor
-        connexionView.layer.shadowOpacity = 0.3
-        connexionView.layer.shadowOffset = CGSize.zero
-        connexionView.layer.shadowRadius = 10
-        buttonGo.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-        buttonGo.layer.cornerRadius = 15
-        buttonGo.layer.backgroundColor = UIColor(red: 1, green: 0.92941, blue: 0, alpha: 1).cgColor
+        connexionView.alpha = 0
+        titleLabel.alpha = 0
+        userId.alpha = 0
+        userPassword.alpha = 0
+        buttonGo.alpha = 0
+        self.displayModal()
         // Do any additional setup after loading the view.
     }
 
