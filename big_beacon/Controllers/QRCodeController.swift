@@ -6,7 +6,6 @@
 //  Copyright © 2018 constantin guidon. All rights reserved.
 //
 
-//https://www.appcoda.com/barcode-reader-swift/
 import UIKit
 import AVFoundation
 
@@ -62,9 +61,12 @@ class QRCodeController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     }
     
     func initCamera(){
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes:[AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(
+            deviceTypes:[AVCaptureDevice.DeviceType.builtInWideAngleCamera],
+            mediaType: AVMediaType.video,
+            position: .back
+        )
         
-        print(deviceDiscoverySession.devices)
         guard let captureDevice = deviceDiscoverySession.devices.first else {
             print("Failed to get the camera device")
             return

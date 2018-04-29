@@ -118,7 +118,7 @@ class LoginController: UIViewController {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                     let token = json["token"]
                     Helper.storeToken(token as! String)
-                    self.redirectToCheckIn(self)
+                    self.redirectToCheckIn()
                 } catch let error as NSError {
                     print(error)
                 }
@@ -127,7 +127,7 @@ class LoginController: UIViewController {
         }
     }
     
-    @IBAction func redirectToCheckIn(_ sender: Any) {
+    private func redirectToCheckIn() {
         if let next = self.storyboard?.instantiateViewController(withIdentifier: "CheckIn") as? ViewController {
             self.navigationController?.pushViewController(next, animated: true)
         }

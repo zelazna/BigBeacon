@@ -109,7 +109,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     fileprivate func startRanging(){
-        let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString:"F2A74FC4-7625-44DB-9B08-CB7E130B2029")!, identifier: "premier")
+        let beaconRegion = CLBeaconRegion(proximityUUID: UUID(uuidString:Constants.beaconUUID)!, identifier: "premier")
         manager.startRangingBeacons(in: beaconRegion)
     }
     
