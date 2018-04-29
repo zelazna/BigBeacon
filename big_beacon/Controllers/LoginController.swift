@@ -95,7 +95,7 @@ class LoginController: UIViewController {
         }
         else {
             let session = URLSession.shared
-            let u = URL(string:"http://localhost:3000/api/login")
+            let u = URL(string:"\(Constants.backEndUrl)/api/login")
             var request = URLRequest(url: u!)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-type")
@@ -118,6 +118,7 @@ class LoginController: UIViewController {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                     let token = json["token"]
                     Helper.storeToken(token as! String)
+                    self.redirectToCheckIn()
                 } catch let error as NSError {
                     print(error)
                 }
@@ -126,7 +127,7 @@ class LoginController: UIViewController {
         }
     }
     
-    @IBAction func redirectToCheckIn(_ sender: Any) {
+    private func redirectToCheckIn() {
         if let next = self.storyboard?.instantiateViewController(withIdentifier: "CheckIn") as? ViewController {
             self.navigationController?.pushViewController(next, animated: true)
         }
@@ -148,16 +149,5 @@ class LoginController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

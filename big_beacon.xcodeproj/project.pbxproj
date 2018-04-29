@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		561EB80520935D4300F08DD4 /* UIMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561EB80420935D4300F08DD4 /* UIMainButton.swift */; };
 		565EECEF209304E20001F445 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565EECEE209304E20001F445 /* LoginController.swift */; };
+		6BC53275708EA360A9AA4447 /* Pods_big_beaconUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDA7EF4A1411E0B0ED9F245 /* Pods_big_beaconUITests.framework */; };
 		C2268732209359ED00E2210B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2268731209359ED00E2210B /* MapKit.framework */; };
+		C299FCEE2095E56500564095 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C299FCED2095E56500564095 /* APIClient.swift */; };
 		C2D2C7202091FC3200608899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C71F2091FC3200608899 /* AppDelegate.swift */; };
 		C2D2C7222091FC3200608899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C7212091FC3200608899 /* ViewController.swift */; };
 		C2D2C7252091FC3200608899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D2C7232091FC3200608899 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 		C2D2C750209204AB00608899 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C74F209204AB00608899 /* Constants.swift */; };
 		C2D2C75220920DDF00608899 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C75120920DDF00608899 /* Helper.swift */; };
 		C2D2C756209222A300608899 /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2C755209222A300608899 /* QRCodeController.swift */; };
+		C4F14934114B2FD26A71F06F /* Pods_big_beaconTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9430A682B86B3F93AD44333 /* Pods_big_beaconTests.framework */; };
+		C9943968048F1131B9C775BE /* Pods_big_beacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7800DC0090CE25CF9DC70E /* Pods_big_beacon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +44,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BC07B33561D774BFBCE2128 /* Pods-big_beaconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-big_beaconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-big_beaconUITests/Pods-big_beaconUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3CDA7EF4A1411E0B0ED9F245 /* Pods_big_beaconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_big_beaconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BBB7361EBA7E419E90074E6 /* Pods-big_beaconTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-big_beaconTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-big_beaconTests/Pods-big_beaconTests.debug.xcconfig"; sourceTree = "<group>"; };
 		561EB80420935D4300F08DD4 /* UIMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMainButton.swift; sourceTree = "<group>"; };
 		565EECEE209304E20001F445 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7F7800DC0090CE25CF9DC70E /* Pods_big_beacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_big_beacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		916E95FBF489467AB5CB1342 /* Pods-big_beacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-big_beacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-big_beacon/Pods-big_beacon.release.xcconfig"; sourceTree = "<group>"; };
+		9EE13AB29565AC3CA02583FD /* Pods-big_beaconTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-big_beaconTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-big_beaconTests/Pods-big_beaconTests.release.xcconfig"; sourceTree = "<group>"; };
+		B9430A682B86B3F93AD44333 /* Pods_big_beaconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_big_beaconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C8F19D1BCDF1A2B044A4D5 /* Pods-big_beaconUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-big_beaconUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-big_beaconUITests/Pods-big_beaconUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCAFB30CAD541F4AF16BA356 /* Pods-big_beacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-big_beacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-big_beacon/Pods-big_beacon.debug.xcconfig"; sourceTree = "<group>"; };
 		C2268731209359ED00E2210B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C299FCED2095E56500564095 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		C2D2C71C2091FC3200608899 /* big_beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = big_beacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D2C71F2091FC3200608899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D2C7212091FC3200608899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2268732209359ED00E2210B /* MapKit.framework in Frameworks */,
+				C9943968048F1131B9C775BE /* Pods_big_beacon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F14934114B2FD26A71F06F /* Pods_big_beaconTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,18 +97,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC53275708EA360A9AA4447 /* Pods_big_beaconUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434F7739C650D378D02FADD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCAFB30CAD541F4AF16BA356 /* Pods-big_beacon.debug.xcconfig */,
+				916E95FBF489467AB5CB1342 /* Pods-big_beacon.release.xcconfig */,
+				4BBB7361EBA7E419E90074E6 /* Pods-big_beaconTests.debug.xcconfig */,
+				9EE13AB29565AC3CA02583FD /* Pods-big_beaconTests.release.xcconfig */,
+				B9C8F19D1BCDF1A2B044A4D5 /* Pods-big_beaconUITests.debug.xcconfig */,
+				2BC07B33561D774BFBCE2128 /* Pods-big_beaconUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C2268730209359ED00E2210B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C2268731209359ED00E2210B /* MapKit.framework */,
+				7F7800DC0090CE25CF9DC70E /* Pods_big_beacon.framework */,
+				B9430A682B86B3F93AD44333 /* Pods_big_beaconTests.framework */,
+				3CDA7EF4A1411E0B0ED9F245 /* Pods_big_beaconUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C245187120937321003F3B0C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2D2C7212091FC3200608899 /* ViewController.swift */,
+				C2D2C755209222A300608899 /* QRCodeController.swift */,
+				565EECEE209304E20001F445 /* LoginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C245187320937351003F3B0C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C2D2C74F209204AB00608899 /* Constants.swift */,
+				C2D2C75120920DDF00608899 /* Helper.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C24518742093737C003F3B0C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				561EB80420935D4300F08DD4 /* UIMainButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C299FCEC2095E54200564095 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				C299FCED2095E56500564095 /* APIClient.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		C2D2C7132091FC3200608899 = {
@@ -103,6 +171,7 @@
 				C2D2C73E2091FC3300608899 /* big_beaconUITests */,
 				C2D2C71D2091FC3200608899 /* Products */,
 				C2268730209359ED00E2210B /* Frameworks */,
+				434F7739C650D378D02FADD3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,17 +188,15 @@
 		C2D2C71E2091FC3200608899 /* big_beacon */ = {
 			isa = PBXGroup;
 			children = (
+				C299FCEC2095E54200564095 /* Http */,
+				C245187120937321003F3B0C /* Controllers */,
 				C2D2C71F2091FC3200608899 /* AppDelegate.swift */,
-				C2D2C7212091FC3200608899 /* ViewController.swift */,
 				C2D2C7232091FC3200608899 /* Main.storyboard */,
 				C2D2C7262091FC3300608899 /* Assets.xcassets */,
 				C2D2C7282091FC3300608899 /* LaunchScreen.storyboard */,
 				C2D2C72B2091FC3300608899 /* Info.plist */,
-				C2D2C74F209204AB00608899 /* Constants.swift */,
-				C2D2C75120920DDF00608899 /* Helper.swift */,
-				C2D2C755209222A300608899 /* QRCodeController.swift */,
-				565EECEE209304E20001F445 /* LoginController.swift */,
-				561EB80420935D4300F08DD4 /* UIMainButton.swift */,
+				C245187320937351003F3B0C /* Shared */,
+				C24518742093737C003F3B0C /* UI */,
 			);
 			path = big_beacon;
 			sourceTree = "<group>";
@@ -159,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2D2C7442091FC3300608899 /* Build configuration list for PBXNativeTarget "big_beacon" */;
 			buildPhases = (
+				2D5C9803297B905EA162920C /* [CP] Check Pods Manifest.lock */,
 				C2D2C7182091FC3200608899 /* Sources */,
 				C2D2C7192091FC3200608899 /* Frameworks */,
 				C2D2C71A2091FC3200608899 /* Resources */,
+				FE2E19E4E1F5FC5919B0D99D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2D2C7472091FC3300608899 /* Build configuration list for PBXNativeTarget "big_beaconTests" */;
 			buildPhases = (
+				E52FB08F8F94380DC7D5E31D /* [CP] Check Pods Manifest.lock */,
 				C2D2C72C2091FC3300608899 /* Sources */,
 				C2D2C72D2091FC3300608899 /* Frameworks */,
 				C2D2C72E2091FC3300608899 /* Resources */,
@@ -194,6 +264,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2D2C74A2091FC3300608899 /* Build configuration list for PBXNativeTarget "big_beaconUITests" */;
 			buildPhases = (
+				50A404D078AEFEC71FC62B2A /* [CP] Check Pods Manifest.lock */,
 				C2D2C7372091FC3300608899 /* Sources */,
 				C2D2C7382091FC3300608899 /* Frameworks */,
 				C2D2C7392091FC3300608899 /* Resources */,
@@ -286,6 +357,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D5C9803297B905EA162920C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-big_beacon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50A404D078AEFEC71FC62B2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-big_beaconUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E52FB08F8F94380DC7D5E31D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-big_beaconTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE2E19E4E1F5FC5919B0D99D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-big_beacon/Pods-big_beacon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-big_beacon/Pods-big_beacon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C2D2C7182091FC3200608899 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -294,6 +440,7 @@
 				C2D2C7222091FC3200608899 /* ViewController.swift in Sources */,
 				561EB80520935D4300F08DD4 /* UIMainButton.swift in Sources */,
 				565EECEF209304E20001F445 /* LoginController.swift in Sources */,
+				C299FCEE2095E56500564095 /* APIClient.swift in Sources */,
 				C2D2C7202091FC3200608899 /* AppDelegate.swift in Sources */,
 				C2D2C750209204AB00608899 /* Constants.swift in Sources */,
 				C2D2C75220920DDF00608899 /* Helper.swift in Sources */,
@@ -468,15 +615,13 @@
 		};
 		C2D2C7452091FC3300608899 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCAFB30CAD541F4AF16BA356 /* Pods-big_beacon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HR575VTH65;
 				INFOPLIST_FILE = big_beacon/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutu.big-beacon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -486,15 +631,13 @@
 		};
 		C2D2C7462091FC3300608899 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 916E95FBF489467AB5CB1342 /* Pods-big_beacon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HR575VTH65;
 				INFOPLIST_FILE = big_beacon/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutu.big-beacon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -504,16 +647,13 @@
 		};
 		C2D2C7482091FC3300608899 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BBB7361EBA7E419E90074E6 /* Pods-big_beaconTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = big_beaconTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutu.big-beaconTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -524,16 +664,13 @@
 		};
 		C2D2C7492091FC3300608899 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EE13AB29565AC3CA02583FD /* Pods-big_beaconTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = big_beaconTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutu.big-beaconTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -544,15 +681,12 @@
 		};
 		C2D2C74B2091FC3300608899 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C8F19D1BCDF1A2B044A4D5 /* Pods-big_beaconUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = big_beaconUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutu.big-beaconUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -563,15 +697,12 @@
 		};
 		C2D2C74C2091FC3300608899 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BC07B33561D774BFBCE2128 /* Pods-big_beaconUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = big_beaconUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutu.big-beaconUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

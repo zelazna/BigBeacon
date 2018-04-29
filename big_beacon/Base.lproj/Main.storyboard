@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="v52-nO-svg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K8w-XB-cZu">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -52,7 +52,7 @@
                                 </constraints>
                                 <state key="normal" title="Scan the QR"/>
                                 <connections>
-                                    <action selector="showScanner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w2q-B6-IRA"/>
+                                    <action selector="showScanner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X37-0B-a33"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnb-F7-Cst" customClass="UIMainButton" customModule="big_beacon" customModuleProvider="target">
@@ -66,8 +66,8 @@
                                     <action selector="checkIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qXU-kT-wCi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prochain cours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPb-NR-lSS">
-                                <rect key="frame" x="98.5" y="114" width="123" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPb-NR-lSS">
+                                <rect key="frame" x="109.5" y="114" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -112,8 +112,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="KJl-QQ-qPa"/>
                     <connections>
-                        <outlet property="checkInButton" destination="Cnb-F7-Cst" id="VLJ-96-nJQ"/>
-                        <outlet property="scanButton" destination="Vic-iv-gOH" id="a4d-Ab-cuO"/>
+                        <outlet property="checkInButton" destination="Cnb-F7-Cst" id="sQY-BI-EYO"/>
+                        <outlet property="courseLocation" destination="xyH-rS-Laf" id="wWR-I2-HQa"/>
+                        <outlet property="courseTime" destination="MDY-3K-7ee" id="NY3-5l-hJL"/>
+                        <outlet property="scanQrCodeButton" destination="Vic-iv-gOH" id="ZM5-sh-jCC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -174,7 +176,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-0e-NTJ">
-                                <rect key="frame" x="107" y="398" width="200" height="40"/>
+                                <rect key="frame" x="60" y="314" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="S8W-aS-lX1"/>
                                     <constraint firstAttribute="width" constant="200" id="oSa-QL-UCf"/>
@@ -205,7 +207,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeK-z6-E2t">
-                                <rect key="frame" x="107" y="292" width="200" height="40"/>
+                                <rect key="frame" x="60" y="208" width="200" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invalid ID or password. Try again !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrg-EW-mmm">
                                         <rect key="frame" x="11" y="13" width="176.5" height="13.5"/>
