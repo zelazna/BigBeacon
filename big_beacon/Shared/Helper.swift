@@ -9,6 +9,8 @@
 import Foundation
 
 class Helper{
+    // https://stackoverflow.com/questions/31203241/how-can-i-use-userdefaults-in-swift
+    
     static func storeToken(_ token : String) {
         UserDefaults.standard.set(token, forKey: "token")
     }

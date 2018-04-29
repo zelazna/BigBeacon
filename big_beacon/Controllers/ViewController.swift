@@ -13,12 +13,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     var qrCode: String? = nil
     let manager = CLLocationManager()
-
+    let apiClient = APIClient(Constants.backEndUrl)
+    
     @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var scanQrCodeButton: UIButton!
+    @IBOutlet weak var courseLocation: UILabel!
+    @IBOutlet weak var courseTime: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
-        //checkToken()
+        checkToken()
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         if let qrCode = appDelegate?.qrCode {
             self.qrCode = qrCode
@@ -28,6 +31,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getLocationInfos()
         checkInButton.isHidden = true
         manager.delegate = self
     }
@@ -52,7 +56,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func checkToken() {
-        // https://stackoverflow.com/questions/31203241/how-can-i-use-userdefaults-in-swift
         if let token = Helper.getToken() {
             refreshToken(token:token)
         } else {
@@ -60,37 +63,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    //https://stackoverflow.com/questions/26364914/http-request-in-swift-with-post-method
-    private func refreshToken(token : String) {
-        let url = URL(string: "\(Constants.backEndUrl)/api/refreshToken")!
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        request.httpBody = try? JSONSerialization.data(withJSONObject: ["token": token], options: [])
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(String(describing: error))")
-                self.redirectToLogin()
+    private func getLocationInfos(){
+        apiClient.getLocationInfos().responseJSON { response in
+            guard response.result.error == nil, let json = response.result.value as? [String: Any] else {
+                // TODO : Handle Error
                 return
             }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(String(describing: response))")
-                self.redirectToLogin()
-            }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-                let token = json["token"]
-                Helper.storeToken(token as! String)
-            } catch let error as NSError {
-                print(error)
-                self.redirectToLogin()
-            }
-            
+            self.courseTime.text = json["date"] as? String
+            self.courseLocation.text = json["location"] as? String
         }
-        task.resume()
+    }
+    
+    //https://grokswift.com/rest-with-alamofire-swiftyjson/
+    private func refreshToken(token : String) {
+        apiClient.refreshToken(["token": token])
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    self.redirectToLogin()
+                    return
+                }
+                // make sure we got some JSON since that's what we expect
+                guard let json = response.result.value as? [String: Any] else {
+                    self.redirectToLogin()
+                    return
+                }
+                // get and print the title
+                guard let token = json["token"] as? String else {
+                    self.redirectToLogin()
+                    return
+                }
+                Helper.storeToken(token)
+        }
+    }
+    
+    private func buildCheckInDict(_ beacons: [CLBeacon]) -> Dictionary<String,Any> {
+        let beaconsCollection : Array<Int> = beacons.map { $0.major.intValue + $0.minor.intValue }
+        return ["token": Helper.getToken()!, "date":"", "QRCodeData" : qrCode!,"beaconCollection":beaconsCollection] as [String : Any]
     }
     
     private func redirectToLogin(){
@@ -106,28 +115,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if beacons.count > 0 {
-            let beaconsCollection : Array<Int> = beacons.map { Int($0.major) + Int($0.minor) }
-            let url = URL(string: "\(Constants.backEndUrl)/api/checkIn")!
-            var request = URLRequest(url: url)
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpMethod = "POST"
-            let dict = ["token": Helper.getToken()!, "date":"", "QRCodeData" : qrCode,"beaconCollection":beaconsCollection] as [String : Any]
-            request.httpBody = try? JSONSerialization.data(withJSONObject:dict , options: [])
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let _ = data, error == nil else {                                                 // check for fundamental networking error
-                    print("error=\(String(describing: error))")
+            let data = buildCheckInDict(beacons)
+            apiClient.checkIn(data).responseJSON { response in
+                guard response.result.error == nil else {                                                 // check for fundamental networking error
                     return
                 }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(String(describing: response))")
-                }
-                // Do stuff with response
-                // 
+                manager.stopRangingBeacons(in: region)
             }
-            task.resume()
-            manager.stopRangingBeacons(in: region)
         }
     }
     
